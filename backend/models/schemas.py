@@ -27,6 +27,7 @@ class CompetitorAnalysis(BaseModel):
     unique_offers: List[str] = Field(default_factory=list, description="Уникальные предложения")
     recommendations: List[str] = Field(default_factory=list, description="Рекомендации")
     summary: str = Field("", description="Общее резюме")
+    mental_health_positioning: str = Field("", description="Позиционирование в нише ментального здоровья")
 
 
 class ImageAnalysis(BaseModel):
@@ -35,6 +36,8 @@ class ImageAnalysis(BaseModel):
     marketing_insights: List[str] = Field(default_factory=list, description="Маркетинговые инсайты")
     visual_style_score: int = Field(0, ge=0, le=10, description="Оценка визуального стиля (0-10)")
     visual_style_analysis: str = Field("", description="Анализ визуального стиля")
+    trust_score: int = Field(0, ge=0, le=10, description="Оценка доверия (0-10)")
+    emotional_tone: str = Field("", description="Эмоциональный тон визуала")
     recommendations: List[str] = Field(default_factory=list, description="Рекомендации")
 
 

@@ -42,9 +42,9 @@ logger = setup_logging()
 class Settings(BaseSettings):
     """Настройки приложения"""
     
-    # ProxyAPI (OpenAI-совместимый)
-    proxy_api_key: str = os.getenv("PROXY_API_KEY", "")
-    proxy_api_base_url: str = "https://api.proxyapi.ru/openai/v1"
+    # OpenAI
+    proxy_api_key: str = os.getenv("OPENAI_API_KEY", "")
+    proxy_api_base_url: str = "https://api.openai.com/v1"
     openai_model: str = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
     openai_vision_model: str = os.getenv("OPENAI_VISION_MODEL", "gpt-4o-mini")
     
@@ -57,9 +57,9 @@ class Settings(BaseSettings):
     max_history_items: int = 10
     
     # Парсер
-    parser_timeout: int = 10
+    parser_timeout: int = 50
     parser_user_agent: str = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-    
+
     class Config:
         env_file = ".env"
         extra = "ignore"

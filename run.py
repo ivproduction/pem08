@@ -4,6 +4,7 @@
 import uvicorn
 import logging
 from backend.config import settings, logger
+from backend.main import app  # noqa: F401 — экспорт для uvicorn run:app
 
 # Настраиваем уровень логирования
 logging.getLogger("competitor_monitor").setLevel(logging.INFO)
